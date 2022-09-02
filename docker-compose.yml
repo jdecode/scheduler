@@ -1,0 +1,60 @@
+version : "3"
+services:
+  hackathonify-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hackathonify-api
+    depends_on:
+      - hackathonify-pg
+    volumes:
+      - .:/var/www/html
+    restart: always
+    ports:
+      - "2229:80"
+      - "3000:3000"
+    environment:
+      APP_NAME: 'Hackathonify 2022'
+      APP_DEBUG: 'true'
+      APP_URL: 'http://220.209.1.1'
+      DB_CONNECTION: 'pgsql'
+      QUEUE_CONNECTION: 'database'
+      XDEBUG_START_WITH_REQUEST: 'no'
+      THE_KING_DEC: '&#9812;'
+      THE_KING_HEX: '&#x2654;'
+      GOOGLE_CLIENT_ID: "qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj"
+      GOOGLE_CLIENT_SECRET: "qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj"
+      GITHUB_CLIENT_ID: "qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj"
+      GITHUB_CLIENT_SECRET: "qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj"
+      XDEBUG_CONFIG: "mode=debug,coverage,develop client_host=host.docker.internal discover_client_host=1 start_with_request=yes"
+    networks:
+      hackathonify-api-network:
+        ipv4_address: 220.209.1.1
+    extra_hosts:
+      - host.docker.internal:host-gateway
+
+  hackathonify-pg:
+    image: postgres:latest
+    ports:
+        - "2346:5432"
+    environment:
+      POSTGRES_PASSWORD: docker
+      POSTGRES_DB: test_db
+    container_name: hackathonify-pg
+    volumes:
+      - hackathonify-pg-disk:/var/lib/postgres
+    networks:
+      hackathonify-api-network:
+        ipv4_address: 220.209.1.2
+
+# On-disk storage of DB data, when containers are stopped/removed
+volumes:
+  hackathonify-pg-disk: {}
+
+# Local network for services running using this docker-compose config
+networks:
+  hackathonify-api-network:
+    ipam:
+      driver: default
+      config:
+        - subnet: 220.209.0.0/16
