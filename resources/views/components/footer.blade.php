@@ -30,9 +30,9 @@
         Built with
         <span class="text-fnl-500 text-lg">&hearts;</span>
         using
-        <a href="https://laravel.com" target="_blank" class="underline text-red-700 font-bold">Laravel</a>
+        <a href="https://laravel.com" target="_blank" class="underline text-gray-500 font-bold">Laravel</a>
         and
-        <a href="https://tailwindcss.com" target="_blank" class="underline font-bold text-cyan-600">Tailwind CSS</a>
+        <a href="https://tailwindcss.com" target="_blank" class="underline font-bold text-gray-500">Tailwind CSS</a>
         by
         <a href="https://github.com/jdecode" target="_blank" class="font-bold underline underline-offset-2">
             <span class="text-fnl-500">jdecode</span>

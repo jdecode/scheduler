@@ -76,7 +76,7 @@
         @endif
         @if($theme_switcher)
             <div onclick="toggleDark()" title="Toggle dark/light mode : Shift+D" class="cursor-pointer pl-2 pt-1">
-                <span class="material-icons-outlined text-3xl pr-2">brightness_6</span>
+                <span class="material-icons-outlined text-3xl pr-2 text-black/75 dark:text-fnl-500/75">brightness_6</span>
             </div>
         @endif
     </div>
