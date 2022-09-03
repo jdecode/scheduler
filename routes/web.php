@@ -24,5 +24,10 @@ Route::middleware(['auth'])->group(function () {
     });
 });
 
+Route::controller(PageController::class)->group(function () {
+    Route::get('/privacy-policy', 'privacyPolicy')->name('pages.privacy-policy');
+    Route::get('/terms-of-service', 'termsOfService')->name('pages.terms-of-service');
+});
+
 
 require __DIR__ . '/auth.php';

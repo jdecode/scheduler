@@ -14,4 +14,14 @@ class PageController extends Controller
         }
         return view('pages.dashboard');
     }
+
+    public function termsOfService(): View
+    {
+        return view('pages.terms-of-service');
+    }
+
+    public function privacyPolicy(): View
+    {
+        return view('pages.privacy-policy');
+    }
 }

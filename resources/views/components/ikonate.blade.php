@@ -1,6 +1,6 @@
 @props([
     'svg' => 'bolt',
-    'title' => 'Flashboard',
+    'title' => 'bolt',
     'class' => '',
     'stroke_width' => '2',
 ])

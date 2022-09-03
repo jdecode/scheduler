@@ -32,8 +32,7 @@
             "
             onclick="toggleDark()"
             title="Toggle theme">
-            <span class="material-icons-outlined text-2xl pr-2 block dark:hidden">dark_mode</span>
-            <span class="material-icons-outlined text-2xl pr-2 hidden dark:block">light_mode</span>
+            <span class="material-icons-outlined text-3xl pr-2">brightness_6</span>
             <span
                 x-cloak x-show="!sidebarCollapsed">
                         Toggle theme

@@ -38,4 +38,9 @@
             <span class="text-fnl-500">jdecode</span>
         </a>
     </p>
+    <p class="mt-2 clear-both">
+        <a href="{{ \Illuminate\Support\Facades\URL::route('pages.terms-of-service') }}" class="">Terms of service</a>
+        |
+        <a href="{{ \Illuminate\Support\Facades\URL::route('pages.privacy-policy') }}" class="">Privacy Policy</a>
+    </p>
 </footer>

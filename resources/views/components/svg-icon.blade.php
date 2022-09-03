@@ -22,7 +22,6 @@
         svg="{{ $svg }}"
         class="
             {{ $class }}
-            stroke-{{ $stroke_color }}-{{ $color_index }}
         "
         stroke_width="{{ $stroke_width }}"
     ></x-ikonate>

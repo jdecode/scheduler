@@ -75,9 +75,8 @@
             </a>
         @endif
         @if($theme_switcher)
-            <div onclick="toggleDark()" title="Toggle dark/light mode : Shift+D" class="cursor-pointer pl-4">
-                <x-svg-icon svg="sun" title="Switch to dark mode [Shift + D]" class="h-6 w-6 block dark:hidden stroke-fnl-500"></x-svg-icon>
-                <x-svg-icon svg="moon" title="Switch to light mode [Shift + D]" class="h-6 w-6 hidden dark:block stroke-white"></x-svg-icon>
+            <div onclick="toggleDark()" title="Toggle dark/light mode : Shift+D" class="cursor-pointer pl-2 pt-1">
+                <span class="material-icons-outlined text-3xl pr-2">brightness_6</span>
             </div>
         @endif
     </div>
