@@ -12,7 +12,7 @@
                     @if (session('status'))
                         <div
                             x-cloak
-                            x-init="$dispatch('open-notification', {content: 'You are logged in !' } )">
+                            x-init="$dispatch('open-notification', {content: '{{ session('status') }}' } )">
                         </div>
                     @endif
                 </div>

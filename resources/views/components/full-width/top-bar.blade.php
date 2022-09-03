@@ -35,51 +35,53 @@
         </div>
         <div class="ml-4 flex items-center md:ml-6">
             <x-theme-switcher helper_icons="true"></x-theme-switcher>
-            <div class="ml-3 relative">
-                <div>
-                    <button
-                        @click="openAuthDropdown = !openAuthDropdown"
-                        class="flex items-center text-sm font-medium focus:outline-none transition duration-150 ease-in-out">
-                        <span>{{ Auth::user()->name }}</span>
-                        <span class="ml-1">
-                            <x-svg-icon svg="chevron-down" title="" class="h-4 w-4"></x-svg-icon>
-                        </span>
-                    </button>
-                </div>
-
-                <!--
-                  Dropdown menu, show/hide based on menu state.
-
-                  Entering: "transition ease-out duration-100"
-                    From: "transform opacity-0 scale-95"
-                    To: "transform opacity-100 scale-100"
-                  Leaving: "transition ease-in duration-75"
-                    From: "transform opacity-100 scale-100"
-                    To: "transform opacity-0 scale-95"
-                -->
-                <div
-                    x-data
-                    x-cloak
-                    x-show="openAuthDropdown"
-                    class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-gray-100 dark:bg-gray-800 ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu">
-
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
+            @auth
+                <div class="ml-3 relative">
+                    <div>
                         <button
-                            type="submit"
-                            x-data
-                            class="
-                                block text-sm leading-5 focus:outline-none transition duration-150 ease-in-out
-                                w-full rounded-md hover:bg-gray-300 dark:hover:bg-gray-700
-                                p-2 px-4 pt-2
-                                text-left
-                                "
-                            >
-                            {{ __('Log Out') }}
+                            @click="openAuthDropdown = !openAuthDropdown"
+                            class="flex items-center text-base font-medium focus:outline-none transition duration-150 ease-in-out">
+                            <span>{{ Auth::user()->name }}</span>
+                            <span class="ml-1">
+                                <x-svg-icon svg="chevron-down" title="" class="h-4 w-4"></x-svg-icon>
+                            </span>
                         </button>
-                    </form>
+                    </div>
+
+                    <!--
+                      Dropdown menu, show/hide based on menu state.
+
+                      Entering: "transition ease-out duration-100"
+                        From: "transform opacity-0 scale-95"
+                        To: "transform opacity-100 scale-100"
+                      Leaving: "transition ease-in duration-75"
+                        From: "transform opacity-100 scale-100"
+                        To: "transform opacity-0 scale-95"
+                    -->
+                    <div
+                        x-data
+                        x-cloak
+                        x-show="openAuthDropdown"
+                        class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-gray-100 dark:bg-gray-800 ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu">
+
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button
+                                type="submit"
+                                x-data
+                                class="
+                                    block text-sm leading-5 focus:outline-none transition duration-150 ease-in-out
+                                    w-full rounded-md hover:bg-gray-300 dark:hover:bg-gray-700
+                                    p-2 px-4 pt-2
+                                    text-left
+                                    "
+                                >
+                                {{ __('Log Out') }}
+                            </button>
+                        </form>
+                    </div>
                 </div>
-            </div>
+            @endauth
         </div>
     </div>
 </div>

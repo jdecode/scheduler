@@ -2,6 +2,7 @@
      xmlns:x-transition="http://www.w3.org/1999/xhtml">
     <div class="w-full flex flex-col items-center space-y-4 pt-10">
         <div
+            x-cloak
             x-show="notification_show"
             @keyup.escape.window="$dispatch('close-notification')"
             class="

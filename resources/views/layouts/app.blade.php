@@ -52,17 +52,28 @@
             x-on:open-notification="openNotification($event.detail.content)"
             x-on:close-notification="closeNotification()"
         >
-            <x-full-width.mobile-sidebar></x-full-width.mobile-sidebar>
-            <x-full-width.desktop-sidebar></x-full-width.desktop-sidebar>
-            <div class="w-full flex flex-col flex-1"
-                 x-bind:class="sidebarCollapsed ? 'md:pl-20' : 'md:pl-64'"
-            >
-                <x-full-width.top-bar></x-full-width.top-bar>
+            @auth
+                <x-full-width.mobile-sidebar></x-full-width.mobile-sidebar>
+                <x-full-width.desktop-sidebar></x-full-width.desktop-sidebar>
+            @endauth
+            <div
+                class="w-full flex flex-col flex-1"
+                @auth
+                    x-bind:class="sidebarCollapsed ? 'md:pl-20' : 'md:pl-64'"
+                @else
+                    :class="'md:pl-0'"
+                @endauth
+                >
+                @auth
+                    <x-full-width.top-bar></x-full-width.top-bar>
+                @endauth
                 <main>
-                    <div class="py-6">
+                    <div class="py-1">
+                        @auth
                         <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                             {{ $header }}
                         </div>
+                        @endauth
                         <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                             {{ $slot }}
                         </div>
