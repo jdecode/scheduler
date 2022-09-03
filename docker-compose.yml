@@ -14,11 +14,12 @@ services:
       - "2229:80"
       - "3000:3000"
     environment:
-      APP_NAME: 'Hackathonify 2022'
+      APP_NAME: 'Lightning Scheduler | Hackathonify 2022'
       APP_DEBUG: 'true'
       APP_URL: 'http://220.209.1.1'
       DB_CONNECTION: 'pgsql'
       QUEUE_CONNECTION: 'database'
+      IGNITION_THEME: 'dark'
       XDEBUG_START_WITH_REQUEST: 'no'
       THE_KING_DEC: '&#9812;'
       THE_KING_HEX: '&#x2654;'
