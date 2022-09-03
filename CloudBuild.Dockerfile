@@ -7,7 +7,7 @@ COPY . /var/www/html
 
 # Run FE specific build steps, if applicable
 RUN npm install
-RUN copmoser run chmoder
+RUN composer run chmoder
 RUN npm run build
 
 # Setup
