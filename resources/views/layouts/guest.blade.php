@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="dark h-full">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,15 +7,25 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
+        <link rel="icon" type="image/svg+xml" href="{{ asset('images/ikonate-orange-svg/bolt.svg') }}" />
 
-        <!-- Scripts -->
+        <!-- Styles -->
+        <link rel="stylesheet" href="{{ asset('bladewind/css/animate.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('bladewind/css/bladewind-ui.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('fonts/outlined.css') }}" />
+        <link rel="stylesheet" href="{{ asset('fonts/devicon-base.css') }}" />
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <style>
+            [x-cloak] { display: none !important; }
+        </style>
     </head>
-    <body>
-        <div class="font-sans text-gray-900 antialiased">
+    <body class="h-full font-sans antialiased bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 min-h-screen flex flex-col justify-between container-fluid mx-auto">
+        <div class="p-3 bg-gray-100 dark:bg-gray-900">
+            <x-theme-switcher></x-theme-switcher>
+        </div>
+        <div class="font-sans antialiased">
             {{ $slot }}
         </div>
+        <x-footer></x-footer>
     </body>
 </html>

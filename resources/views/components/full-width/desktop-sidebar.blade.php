@@ -6,7 +6,7 @@
     <!-- Sidebar component, swap this element with another sidebar if you like -->
     <div class="flex flex-col flex-grow pt-5 bg-gray-300 dark:bg-gray-800 overflow-y-auto">
         <div class="flex items-center flex-shrink-0 px-4">
-            <a href="{{ route('here') }}">
+            <a href="{{ route('dashboard') }}">
                 <x-application-logo class="block h-10 w-auto fill-current"></x-application-logo>
             </a>
         </div>

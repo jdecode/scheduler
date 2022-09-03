@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="dark h-full"
-      xmlns:x-bind="http://www.w3.org/1999/xhtml">
+      xmlns:x-bind="http://www.w3.org/1999/xhtml" xmlns:x-on="http://www.w3.org/1999/xhtml">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,10 +31,26 @@
                     },
                     uncollapseSidebar() {
                         this.sidebarCollapsed = false
+                    },
+                    notification_show: false,
+                    notification_success: false,
+                    notification_content: '-',
+                    openNotification(content, success = true) {
+                        this.notification_content = content
+                        this.notification_success = success
+                        this.notification_show = true
+                        setTimeout(() => {
+                            this.closeNotification()
+                        }, 5000)
+                    },
+                    closeNotification() {
+                        this.notification_show = false
                     }
                 }"
             @keydown.shift.left.document="collapseSidebar()"
             @keydown.shift.right.document="uncollapseSidebar()"
+            x-on:open-notification="openNotification($event.detail.content)"
+            x-on:close-notification="closeNotification()"
         >
             <x-full-width.mobile-sidebar></x-full-width.mobile-sidebar>
             <x-full-width.desktop-sidebar></x-full-width.desktop-sidebar>
@@ -53,6 +69,7 @@
                     </div>
                 </main>
             </div>
+            <x-custom.notifications></x-custom.notifications>
         </div>
         <x-footer></x-footer>
     </body>
