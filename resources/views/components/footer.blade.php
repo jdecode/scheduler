@@ -11,7 +11,7 @@
         <a
             class="hover:underline flex items-center justify-center relative"
             title="GitHub repo [new tab]"
-            href="https://github.com/jdecode/hackathonify"
+            href="https://github.com/jdecode/hackathonify/tree/lightning-scheduler"
             target="_blank">
             <span>Lightning Scheduler </span>
             <x-svg-icon
