@@ -1,3 +1,9 @@
+@import '../bladewind/css/animate.min.css';
+@import '../bladewind/css/bladewind-ui.min.css';
+@import '../fonts/outlined.css';
+@import '../fonts/devicon-base.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
