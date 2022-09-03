@@ -21,7 +21,7 @@
             <x-svg-icon
                 svg="bolt"
                 title="Ligtning Scheduler"
-                class="stroke-fnl-500 absolute right-0 top-0 -mr-8 -mt-3 animate-ping opacity-25"></x-svg-icon>
+                class="stroke-fnl-500 absolute right-0 top-0 -mr-8 -mt-3 animate-ping opacity-75"></x-svg-icon>
         </a>
     </p>
     <p>
