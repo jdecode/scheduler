@@ -137,9 +137,7 @@
             "pre-commit": [
                 "docker-compose exec -T hackathonify-api composer run pre-commit"
             ],
-            "pre-push": [
-                "docker-compose exec -T hackathonify-api composer run pre-push"
-            ],
+            "pre-push": [],
             "post-merge": [
                 "docker-compose exec -T hackathonify-api composer run post-merge"
             ]
