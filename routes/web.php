@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\MeetingController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\ScheduleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +24,15 @@ Route::middleware(['auth'])->group(function () {
     Route::controller(PageController::class)->group(function () {
         Route::get('/dashboard', 'dashboard')->name('dashboard');
     });
+
+    Route::resource('/schedules', ScheduleController::class)->only(
+        ['index', 'show', 'store', 'create', 'destroy', 'edit', 'update']
+    );
+
+    Route::resource('/meetings', MeetingController::class)->only(
+        ['index', 'show', 'store', 'create', 'destroy', 'edit', 'update']
+    );
+
 });
 
 Route::controller(PageController::class)->group(function () {

@@ -9,22 +9,22 @@
                 <span x-cloak x-show="!sidebarCollapsed">{{ __('Dashboard') }}</span>
             </x-nav-link>
         </li>
-{{--        <li class="border border-l-0 border-r-0 border-b-0 border-t-1 border-gray-500/50" title="Setup">--}}
-{{--            <x-nav-link--}}
-{{--                class="group"--}}
-{{--                :href="route('setup.index')" :active="request()->routeIs('setup.index')">--}}
-{{--                <span class="material-icons-outlined text-2xl pr-2">tune</span>--}}
-{{--                <span x-cloak x-show="!sidebarCollapsed">{{ __('Setup') }}</span>--}}
-{{--            </x-nav-link>--}}
-{{--        </li>--}}
-{{--        <li title="Update Cache">--}}
-{{--            <x-nav-link--}}
-{{--                class="group"--}}
-{{--                :href="route('setup.update-cache')" :active="request()->routeIs('setup.update-cache')">--}}
-{{--                <span class="material-icons-outlined text-2xl pr-2">cached</span>--}}
-{{--                <span x-cloak x-show="!sidebarCollapsed">{{ __('Update Cache') }}</span>--}}
-{{--            </x-nav-link>--}}
-{{--        </li>--}}
+        <li class="border border-l-0 border-r-0 border-b-0 border-t-1 border-gray-500/50" title="My Schedule">
+            <x-nav-link
+                class="group"
+                :href="route('schedules.index')" :active="request()->routeIs('schedules.index')">
+                <span class="material-icons-outlined text-2xl pr-2">calendar_month</span>
+                <span x-cloak x-show="!sidebarCollapsed">{{ __('My Schedule') }}</span>
+            </x-nav-link>
+        </li>
+        <li title="My Meetings">
+            <x-nav-link
+                class="group"
+                :href="route('meetings.index')" :active="request()->routeIs('meetings.index')">
+                <span class="material-icons-outlined text-2xl pr-2">question_answer</span>
+                <span x-cloak x-show="!sidebarCollapsed">{{ __('My Meetings') }}</span>
+            </x-nav-link>
+        </li>
         <li
             class="
                 border border-l-0 border-r-0 border-b-0 border-t-1 border-gray-500/50
