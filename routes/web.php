@@ -36,6 +36,7 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::get('/connect-with-me/{uuid}', [MeetingController::class, 'connectWithMe'])->name('connectWithMe');
+Route::post('/save-meetings/{uuid}', [MeetingController::class, 'saveMeeting'])->name('saveMeeting');
 
 Route::controller(PageController::class)->group(function () {
     Route::get('/privacy-policy', 'privacyPolicy')->name('pages.privacy-policy');
