@@ -7,7 +7,7 @@ use Illuminate\View\View;
 
 class MeetingController extends Controller
 {
-    public function index(): View
+    public function myMeetings(): View
     {
         $meetings = Auth::user()->meetings()->get()->toArray();
         return view('pages.meetings', compact('meetings'));

@@ -33,7 +33,6 @@ Route::middleware(['auth'])->group(function () {
     Route::controller(MeetingController::class)->group(function () {
         Route::get('/my-meetings', 'myMeetings')->name('myMeetings');
     });
-
 });
 
 Route::controller(PageController::class)->group(function () {

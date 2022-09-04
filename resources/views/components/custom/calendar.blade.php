@@ -1,5 +1,5 @@
 <div class="max-w-sm w-full shadow-lg">
-    <div class="md:p-8 p-5 dark:bg-gray-800 bg-white rounded-t">
+    <div class="md:p-8 p-5 dark:bg-gray-800 bg-white rounded-t hidden">
         <div class="px-4 flex items-center justify-between">
             <span  tabindex="0" class="focus:outline-none  text-base font-bold dark:text-gray-100 text-gray-800">September 2022</span>
             <div class="flex items-center">

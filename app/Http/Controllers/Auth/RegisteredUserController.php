@@ -50,7 +50,7 @@ class RegisteredUserController extends Controller
         event(new Registered($user));
 
         Auth::login($user);
-        $user->schedules()->create([
+        $user->schedule()->create([
             'monday' => true,
             'tuesday' => true,
             'wednesday' => true,

@@ -12,7 +12,7 @@
                     <div>
                         <x-empty-state
                             title="Meeting"
-                            title_url="{{ route('meetings.create') }}"></x-empty-state>
+                            title_url="{{ route('myMeetings') }}"></x-empty-state>
                     </div>
                 @endif
                 @foreach (($meetings ?? []) as $meeting)
