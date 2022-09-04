@@ -13,6 +13,16 @@ class Schedule extends Model
     use HasFactory;
     use SoftDeletes;
 
+    public const DAYS = [
+        'monday' => true,
+        'tuesday' => true,
+        'wednesday' => true,
+        'thursday' => true,
+        'friday' => true,
+        'saturday' => false,
+        'sunday' => false,
+    ];
+
     protected $fillable = [
         'user_id',
         'monday',
@@ -27,6 +37,8 @@ class Schedule extends Model
         'break_size',
         'break_start_time',
         'active',
+        'availability_starts',
+        'availability_ends',
     ];
 
     public function user(): BelongsTo
