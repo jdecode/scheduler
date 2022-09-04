@@ -102,8 +102,7 @@
         "ci": [
             "@chmoder",
             "npm run heroku-prebuild",
-            "npm run heroku-postbuild",
-            "@tests"
+            "npm run heroku-postbuild"
         ],
         "pre-commit": [
             "@composer run parallel-lint",
