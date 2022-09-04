@@ -17,9 +17,9 @@
     </head>
     <body class="h-full font-sans antialiased bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 min-h-screen flex flex-col justify-between container-fluid mx-auto">
         <script type="text/javascript" src="{{ asset('bladewind/js/helpers.js') }}"></script>
-        <div>
-            <a href="{{ route('/') }}">
-                <x-application-logo class="block h-10 w-auto fill-current"></x-application-logo>
+        <div class="w-full text-center mx-auto flex flex-col items-center ">
+            <a href="{{ route('dashboard') }}" class="text-center mx-auto mt-4">
+                <x-application-logo class="block h-10 fill-current"></x-application-logo>
             </a>
             <div
                 class="w-full flex flex-col flex-1 pl-0"
