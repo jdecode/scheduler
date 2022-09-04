@@ -23,7 +23,7 @@ class MeetingController extends Controller
         return view('pages.connect-with-me', compact('schedule'));
     }
 
-    public function saveMeeting()
+    public function saveMeeting($uuid)
     {
     }
 }
