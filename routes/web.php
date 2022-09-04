@@ -25,13 +25,14 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/dashboard', 'dashboard')->name('dashboard');
     });
 
-    Route::resource('/schedules', ScheduleController::class)->only(
-        ['index', 'show', 'store', 'create', 'destroy', 'edit', 'update']
-    );
+    Route::controller(ScheduleController::class)->group(function () {
+        Route::get('/my-schedule', 'mySchedule')->name('mySchedule');
+        Route::put('/save-schedule', 'saveSchedule')->name('saveSchedule');
+    });
 
-    Route::resource('/meetings', MeetingController::class)->only(
-        ['index', 'show', 'store', 'create', 'destroy', 'edit', 'update']
-    );
+    Route::controller(MeetingController::class)->group(function () {
+        Route::get('/my-meetings', 'myMeetings')->name('myMeetings');
+    });
 
 });
 

@@ -6,6 +6,13 @@
     </x-slot>
 
     <div class="py-2">
+        <div class="mb-6">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div class="overflow-hidden shadow-xl sm:rounded-lg">
+                    My calendar link : {{ Auth::user()->schedule->uuid }}
+                </div>
+            </div>
+        </div>
         <x-custom.calendar></x-custom.calendar>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="overflow-hidden shadow-sm sm:rounded-lg">

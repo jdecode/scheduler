@@ -46,7 +46,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function schedules(): HasOne
+    public function schedule(): HasOne
     {
         return $this->hasOne(Schedule::class);
     }

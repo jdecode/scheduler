@@ -12,7 +12,7 @@
         <li class="border border-l-0 border-r-0 border-b-0 border-t-1 border-gray-500/50" title="My Schedule">
             <x-nav-link
                 class="group"
-                :href="route('schedules.index')" :active="request()->routeIs('schedules.index')">
+                :href="route('mySchedule')" :active="request()->routeIs('mySchedule')">
                 <span class="material-icons-outlined text-2xl pr-2">calendar_month</span>
                 <span x-cloak x-show="!sidebarCollapsed">{{ __('My Schedule') }}</span>
             </x-nav-link>
@@ -20,7 +20,7 @@
         <li title="My Meetings">
             <x-nav-link
                 class="group"
-                :href="route('meetings.index')" :active="request()->routeIs('meetings.index')">
+                :href="route('myMeetings')" :active="request()->routeIs('myMeetings')">
                 <span class="material-icons-outlined text-2xl pr-2">question_answer</span>
                 <span x-cloak x-show="!sidebarCollapsed">{{ __('My Meetings') }}</span>
             </x-nav-link>
@@ -77,11 +77,13 @@
                 flex items-center cursor-pointer
                 border border-l-0 border-r-0 border-b-0 border-t-1 border-gray-500/50
                 hidden md:block"
-             x-cloak x-show="!sidebarCollapsed" @click="sidebarCollapsed = true">
+            x-cloak
+            x-show="!sidebarCollapsed"
+            @click="sidebarCollapsed = true"
+            title="Shift + left-arrow to collapse / Shift + right-arrow to expand"
+            >
             <span class="material-icons-outlined text-xl">arrow_back</span>
-            <span
-                class="pl-2 text-xl"
-            >Collapse</span>
+            <span class="pl-2 text-xl">Collapse</span>
         </div>
         <div
             class="py-4 pl-6

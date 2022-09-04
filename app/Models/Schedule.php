@@ -39,6 +39,7 @@ class Schedule extends Model
         'active',
         'availability_starts',
         'availability_ends',
+        'uuid'
     ];
 
     public function user(): BelongsTo

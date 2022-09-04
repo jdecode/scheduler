@@ -10,9 +10,7 @@
             <ul role="list" class="bg-gray-200 dark:bg-gray-800/25">
                 @if(empty($schedules))
                     <div>
-                        <x-empty-state
-                            title="Schedule"
-                            title_url="{{ route('schedules.create') }}"></x-empty-state>
+                        <x-unset-schedule></x-unset-schedule>
                     </div>
                 @endif
                 @foreach (($schedules ?? []) as $schedule)
