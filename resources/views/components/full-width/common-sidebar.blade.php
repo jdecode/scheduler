@@ -9,22 +9,22 @@
                 <span x-cloak x-show="!sidebarCollapsed">{{ __('Dashboard') }}</span>
             </x-nav-link>
         </li>
-{{--        <li class="border border-l-0 border-r-0 border-b-0 border-t-1 border-gray-500/50" title="Setup">--}}
-{{--            <x-nav-link--}}
-{{--                class="group"--}}
-{{--                :href="route('setup.index')" :active="request()->routeIs('setup.index')">--}}
-{{--                <span class="material-icons-outlined text-2xl pr-2">tune</span>--}}
-{{--                <span x-cloak x-show="!sidebarCollapsed">{{ __('Setup') }}</span>--}}
-{{--            </x-nav-link>--}}
-{{--        </li>--}}
-{{--        <li title="Update Cache">--}}
-{{--            <x-nav-link--}}
-{{--                class="group"--}}
-{{--                :href="route('setup.update-cache')" :active="request()->routeIs('setup.update-cache')">--}}
-{{--                <span class="material-icons-outlined text-2xl pr-2">cached</span>--}}
-{{--                <span x-cloak x-show="!sidebarCollapsed">{{ __('Update Cache') }}</span>--}}
-{{--            </x-nav-link>--}}
-{{--        </li>--}}
+        <li class="border border-l-0 border-r-0 border-b-0 border-t-1 border-gray-500/50" title="My Schedule">
+            <x-nav-link
+                class="group"
+                :href="route('mySchedule')" :active="request()->routeIs('mySchedule')">
+                <span class="material-icons-outlined text-2xl pr-2">calendar_month</span>
+                <span x-cloak x-show="!sidebarCollapsed">{{ __('My Schedule') }}</span>
+            </x-nav-link>
+        </li>
+        <li title="My Meetings">
+            <x-nav-link
+                class="group"
+                :href="route('myMeetings')" :active="request()->routeIs('myMeetings')">
+                <span class="material-icons-outlined text-2xl pr-2">question_answer</span>
+                <span x-cloak x-show="!sidebarCollapsed">{{ __('My Meetings') }}</span>
+            </x-nav-link>
+        </li>
         <li
             class="
                 border border-l-0 border-r-0 border-b-0 border-t-1 border-gray-500/50
@@ -32,8 +32,7 @@
             "
             onclick="toggleDark()"
             title="Toggle theme">
-            <span class="material-icons-outlined text-2xl pr-2 block dark:hidden">dark_mode</span>
-            <span class="material-icons-outlined text-2xl pr-2 hidden dark:block">light_mode</span>
+            <span class="material-icons-outlined text-3xl pr-2">brightness_6</span>
             <span
                 x-cloak x-show="!sidebarCollapsed">
                         Toggle theme
@@ -78,11 +77,13 @@
                 flex items-center cursor-pointer
                 border border-l-0 border-r-0 border-b-0 border-t-1 border-gray-500/50
                 hidden md:block"
-             x-cloak x-show="!sidebarCollapsed" @click="sidebarCollapsed = true">
+            x-cloak
+            x-show="!sidebarCollapsed"
+            @click="sidebarCollapsed = true"
+            title="Shift + left-arrow to collapse / Shift + right-arrow to expand"
+            >
             <span class="material-icons-outlined text-xl">arrow_back</span>
-            <span
-                class="pl-2 text-xl"
-            >Collapse</span>
+            <span class="pl-2 text-xl">Collapse</span>
         </div>
         <div
             class="py-4 pl-6

@@ -79,7 +79,7 @@
         "p": "php artisan test --stop-on-error --stop-on-failure",
         "routes": "@php artisan route:list --except-vendor",
         "larastan": "vendor/bin/phpstan analyze",
-        "chmoder" : "chmod -R 777 storage bootstrap && chown -R 1001:1001 \"/root\"",
+        "chmoder" : "mkdir public/build && chmod -R 777 storage bootstrap public/build && chown -R 1001:1001 \"/root\"",
         "clear": [
             "@php artisan config:clear",
             "@php artisan route:clear",
@@ -102,8 +102,7 @@
         "ci": [
             "@chmoder",
             "npm run heroku-prebuild",
-            "npm run heroku-postbuild",
-            "@tests"
+            "npm run heroku-postbuild"
         ],
         "pre-commit": [
             "@composer run parallel-lint",
@@ -137,9 +136,7 @@
             "pre-commit": [
                 "docker-compose exec -T hackathonify-api composer run pre-commit"
             ],
-            "pre-push": [
-                "docker-compose exec -T hackathonify-api composer run pre-push"
-            ],
+            "pre-push": [],
             "post-merge": [
                 "docker-compose exec -T hackathonify-api composer run post-merge"
             ]

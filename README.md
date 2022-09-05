@@ -1,64 +1,41 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+## Lightning Scheduler
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Simple meeting scheduler, lightning fast loading times.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+1. Built with Laravel and Tailwind
+2. Fully responsive
+3. Dark mode support (homepage/login/register/Dashboard-page/my-schedule/my-meetings)
+4. Keyboard-shortcuts for toggling dark/light mode : "Shift + D"
+5. Sidebar toggled by "Shift + Left arrow" (to collapse) and "Shift + Right arrow" (to un-collapse)
+6. Hosted on GCP Cloud Run
+7. Integrated with GitHub Actions (for CI/CD, not a lot of test cases ATM though)
+8. DB hosted at AWS/RDS [Postgres]
+9. Screenshots/video links added below.
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+![Screenshot from 2022-09-04 14-22-29](https://user-images.githubusercontent.com/37613346/188306724-945fac05-2fde-4915-adbf-14e7eae64dce.png)
+![Screenshot from 2022-09-04 14-20-41](https://user-images.githubusercontent.com/37613346/188306725-30b571d1-84a3-4c25-a8df-4c5cfb6c0a0a.png)
+![Screenshot from 2022-09-04 14-20-28](https://user-images.githubusercontent.com/37613346/188306726-f50e119c-d6bd-45d7-99c2-0cb32e2d800d.png)
+![Screenshot from 2022-09-04 14-19-13](https://user-images.githubusercontent.com/37613346/188306727-b81ab0e6-3be0-4201-93a3-678f2c3bcb3a.png)
+![Screenshot from 2022-09-04 14-19-03](https://user-images.githubusercontent.com/37613346/188306729-8ae125e8-a30f-456b-b5b9-a3b99a72ffbe.png)
+![Screenshot from 2022-09-04 14-26-47](https://user-images.githubusercontent.com/37613346/188306760-4023418e-ac10-48e1-b388-e31b460c4aa9.png)
+![Screenshot from 2022-09-04 14-26-36](https://user-images.githubusercontent.com/37613346/188306761-e26bbb06-a230-43c7-b5f1-5eefe110c9fa.png)
+![Screenshot from 2022-09-04 14-25-28](https://user-images.githubusercontent.com/37613346/188306764-2d8f15d2-f4a1-42e6-84e5-7f8577001eeb.png)
+![Screenshot from 2022-09-04 14-24-13](https://user-images.githubusercontent.com/37613346/188306765-47d1aa8f-d02f-4405-a368-41d975af1558.png)
+![Screenshot from 2022-09-04 14-23-57](https://user-images.githubusercontent.com/37613346/188306766-886baa08-981a-4c07-836b-23eac73274d7.png)
+![Screenshot from 2022-09-04 14-23-37](https://user-images.githubusercontent.com/37613346/188306767-fa3bf880-55e4-466c-a82d-9ff7586be238.png)
+![Screenshot from 2022-09-04 14-23-31](https://user-images.githubusercontent.com/37613346/188306768-fa7bec66-b936-4b57-bd3b-e43ab2041b8e.png)
+![Screenshot from 2022-09-04 14-23-21](https://user-images.githubusercontent.com/37613346/188306771-6e3d6b48-0482-4367-8ee9-79c9111a78dc.png)
+![Screenshot from 2022-09-04 14-23-11](https://user-images.githubusercontent.com/37613346/188306773-d4930f5b-1867-4ddd-a76c-e2f3a8bb2e97.png)
+![Screenshot from 2022-09-04 14-22-59](https://user-images.githubusercontent.com/37613346/188306775-a69cc5ca-26f3-4d5d-bc66-f05199bcb7b5.png)
+![Screenshot from 2022-09-04 14-22-29](https://user-images.githubusercontent.com/37613346/188306777-16013891-1ab3-43ed-b794-3572dbdd7594.png)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+https://user-images.githubusercontent.com/37613346/188306806-38f17f10-f672-4a13-bf74-79047d48ddb2.mp4
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Updates to be followed, and will be launched at ProductHunt soon... 

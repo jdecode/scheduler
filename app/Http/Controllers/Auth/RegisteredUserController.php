@@ -5,10 +5,12 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
+use Carbon\Carbon;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use Illuminate\Validation\Rules;
 
 class RegisteredUserController extends Controller
@@ -48,6 +50,23 @@ class RegisteredUserController extends Controller
         event(new Registered($user));
 
         Auth::login($user);
+        $user->schedule()->create([
+            'monday' => true,
+            'tuesday' => true,
+            'wednesday' => true,
+            'thursday' => true,
+            'friday' => true,
+            'saturday' => false,
+            'sunday' => false,
+            'slot_size' => 30,
+            'breaks' => true,
+            'break_size' => 30,
+            'break_start_time' => ('13:00:00'),
+            'active' => true,
+            'availability_starts' => '09:00:00',
+            'availability_ends' => '17:00:00',
+            'uuid' => Str::orderedUuid()
+        ]);
 
         return redirect(RouteServiceProvider::HOME);
     }

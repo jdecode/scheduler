@@ -9,11 +9,6 @@
 
         <link rel="icon" type="image/svg+xml" href="{{ asset('images/ikonate-orange-svg/bolt.svg') }}" />
 
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('bladewind/css/animate.min.css') }}" />
-        <link rel="stylesheet" href="{{ asset('bladewind/css/bladewind-ui.min.css') }}" />
-        <link rel="stylesheet" href="{{ asset('fonts/outlined.css') }}" />
-        <link rel="stylesheet" href="{{ asset('fonts/devicon-base.css') }}" />
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <style>
             [x-cloak] { display: none !important; }
