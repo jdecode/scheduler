@@ -27,9 +27,13 @@ return new class extends Migration
             $table->integer('slot_size')->nullable()->default(30)->comment('In minutes');
             $table->jsonb('breaks')->nullable()->default(null);
             $table->integer('break_size')->nullable()->default(null)->comment('In minutes');
-            $table->timestamp('break_start_time')->nullable()->default(null);
+            $table->timeTz('break_start_time')->nullable()->default(null);
             $table->uuid('uuid')->nullable()->default(null);
             $table->boolean('active')->nullable()->default(true);
+            $table->timeTz('availability_starts')->nullable()->default(null);
+            $table->timeTz('availability_ends')->nullable()->default(null);
+            $table->string('random_string')->index()->nullable()->default(null);
+
             $table->softDeletes();
             $table->timestamps();
         });

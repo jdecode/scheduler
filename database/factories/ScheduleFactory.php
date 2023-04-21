@@ -25,12 +25,12 @@ class ScheduleFactory extends Factory
             'slot_size' => 30,
             'breaks' => '[]',
             'break_size' => 0,
-            'break_start_time' => '00:00:00',
-            'uuid' => '12345678-1234-1234-1234-123456789012',
+            'break_start_time' => now()->setTimezone('UTC')->format('H:i:s'),
+            'uuid' => Str::orderedUuid(),
             'active' => true,
             'deleted_at' => null,
-            'availability_starts' => '09:00:00',
-            'availability_ends' => '17:00:00',
+            'availability_starts' => now()->setTimezone('UTC')->format('09:00:00'),
+            'availability_ends' => now()->setTimezone('UTC')->format('17:00:00'),
             'random_string' => Str::random(32),
         ];
     }

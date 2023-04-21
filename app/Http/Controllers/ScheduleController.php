@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Schedule;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
-use Redirect;
 
 class ScheduleController extends Controller
 {

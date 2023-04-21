@@ -11,17 +11,17 @@
         <a
             class="hover:underline flex items-center justify-center relative"
             title="GitHub repo [new tab]"
-            href="https://github.com/jdecode/hackathonify/tree/lightning-scheduler"
+            href="https://github.com/jdecode/scheduler"
             target="_blank">
-            <span>Lightning Scheduler </span>
+            <span>Scheduler </span>
             <x-svg-icon
                 svg="bolt"
-                title="Lightning Scheduler"
+                title="Scheduler"
                 class="stroke-dev-500 absolute right-0 top-0 -mr-8 -mt-3"></x-svg-icon>
             <x-svg-icon
                 svg="bolt"
-                title="Ligtning Scheduler"
-                class="stroke-dev-500 absolute right-0 top-0 -mr-8 -mt-3 animate-ping opacity-75"></x-svg-icon>
+                title="Scheduler"
+                class="stroke-dev-500 absolute right-0 top-0 -mr-8 -mt-3 animate-ping opacity-25"></x-svg-icon>
         </a>
     </p>
     <p>
@@ -39,8 +39,8 @@
         </a>
     </p>
     <p class="mt-2 clear-both">
-        <a href="{{ \Illuminate\Support\Facades\URL::route('pages.terms-of-service') }}" class="">Terms of service</a>
+        <a href="{{ \Illuminate\Support\Facades\URL::route('pages.terms-of-service') }}" target="_blank" class="">Terms of service</a>
         |
-        <a href="{{ \Illuminate\Support\Facades\URL::route('pages.privacy-policy') }}" class="">Privacy Policy</a>
+        <a href="{{ \Illuminate\Support\Facades\URL::route('pages.privacy-policy') }}" target="_blank" class="">Privacy Policy</a>
     </p>
 </footer>
