@@ -1,19 +1,27 @@
-
-
 ## Lightning Scheduler
 
+### Prerequisites
+1. Git - To clone this repo
+2. Docker/docker-compose - To run the app locally
+
+### Run locally
+```
+docker-compose up -d
+```
+_This will take a little while (a few minutes, max, one-time only) to download docker images and build containers_
+```
+http://23.214.1.1
+```
+
+### About
 Simple meeting scheduler, lightning fast loading times.
-
-
 1. Built with Laravel and Tailwind
 2. Fully responsive
 3. Dark mode support (homepage/login/register/Dashboard-page/my-schedule/my-meetings)
 4. Keyboard-shortcuts for toggling dark/light mode : "Shift + D"
 5. Sidebar toggled by "Shift + Left arrow" (to collapse) and "Shift + Right arrow" (to un-collapse)
-6. Hosted on GCP Cloud Run
-7. Integrated with GitHub Actions (for CI/CD, not a lot of test cases ATM though)
-8. DB hosted at AWS/RDS [Postgres]
-9. Screenshots/video links added below.
+6. Integrated with GitHub Actions (for CI/CD, not a lot of test cases ATM though)
+7. Some screenshots are added below
 
 
 ![Screenshot from 2022-09-04 14-22-29](https://user-images.githubusercontent.com/37613346/188306724-945fac05-2fde-4915-adbf-14e7eae64dce.png)

@@ -1,0 +1,24 @@
+name: CoIn
+
+on:
+  push:
+    paths:
+      - '**/.php'
+      - '**/.yml'
+      - '**/.yaml'
+      - '**/.json'
+      - '.env.*'
+      - 'terraform/**'
+
+jobs:
+  CoIn:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Docker Compose
+        run: docker-compose up -d
+      - name: Composer install [ + npm install && npm run build]
+        run: docker-compose exec -T scheduler-web composer install
+      - name: CI checks
+        run: docker-compose exec -T scheduler-web composer run ci
+
