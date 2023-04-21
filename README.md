@@ -33,9 +33,3 @@ Simple meeting scheduler, lightning fast loading times.
 ![Screenshot from 2022-09-04 14-22-59](https://user-images.githubusercontent.com/37613346/188306775-a69cc5ca-26f3-4d5d-bc66-f05199bcb7b5.png)
 ![Screenshot from 2022-09-04 14-22-29](https://user-images.githubusercontent.com/37613346/188306777-16013891-1ab3-43ed-b794-3572dbdd7594.png)
 
-
-https://user-images.githubusercontent.com/37613346/188306806-38f17f10-f672-4a13-bf74-79047d48ddb2.mp4
-
-
-
-Updates to be followed, and will be launched at ProductHunt soon... 
