@@ -9,7 +9,7 @@ on:
       - '**/.json'
       - '.env.*'
       - 'terraform/**'
-c
+
 jobs:
   CoIn:
     runs-on: ubuntu-latest
