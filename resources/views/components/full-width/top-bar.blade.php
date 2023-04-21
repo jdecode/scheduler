@@ -11,7 +11,7 @@
     <button
         type="button"
         @click="showMobileSidebar = true"
-        class="px-4 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-fnl-500 md:hidden">
+        class="px-4 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-dev-500 md:hidden">
         <span class="sr-only">Open sidebar</span>
         <!-- Heroicon name: outline/menu-alt-2 -->
         <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">

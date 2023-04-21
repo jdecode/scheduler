@@ -31,7 +31,7 @@
                             {{ $value ? 'checked' : '' }}
                             type="checkbox"
                             class="
-                                h-4 w-4 rounded text-fnl-500
+                                h-4 w-4 rounded text-dev-500
                                 ring-0 focus:ring-0 focus:outline-none
                                 " />
                     </div>
@@ -133,8 +133,8 @@
                     class="
                         py-2 px-4
                         rounded-md
-                        bg-fnl-500 text-white
-                        hover:bg-fnl-600
+                        bg-dev-500 text-white
+                        hover:bg-dev-600
                         focus:outline-none focus:ring-0 ring-0
                         font-bold text-lg w-36
                         ">

@@ -46,13 +46,13 @@
                         @csrf
                         @method('PUT')
                         <div class="h-0 flex-1 overflow-y-auto">
-                            <div class="bg-fnl-700 py-6 px-4 sm:px-6">
+                            <div class="bg-dev-700 py-6 px-4 sm:px-6">
                                 <div class="flex items-center justify-between">
                                     <h2 class="text-lg text-lg font-bold">
                                         <span x-text="project_name"></span>
                                     </h2>
                                     <div class="ml-3 flex h-7 items-center">
-                                        <button type="button" @click="$dispatch('close-projector')" class="rounded-md bg-fnl-700 text-fnl-200 focus:outline-none focus:ring-2 focus:ring-white">
+                                        <button type="button" @click="$dispatch('close-projector')" class="rounded-md bg-dev-700 text-dev-200 focus:outline-none focus:ring-2 focus:ring-white">
                                             <span class="sr-only">Close panel</span>
                                             <x-svg-icon
                                                 svg="close"
@@ -82,7 +82,7 @@
                                                     id="postman_api_key"
                                                     class="
                                                         block w-full rounded-md
-                                                        border-gray-500 shadow-sm focus:border-fnl-500 focus:ring-fnl-500 sm:text-sm
+                                                        border-gray-500 shadow-sm focus:border-dev-500 focus:ring-dev-500 sm:text-sm
                                                         text-gray-900 bg-gray-100 dark:text-gray-100 dark:bg-gray-900
                                                     ">
                                             </div>
@@ -99,7 +99,7 @@
                                                     id="postman_repo"
                                                     class="
                                                         block w-full rounded-md
-                                                        border-gray-500 shadow-sm focus:border-fnl-500 focus:ring-fnl-500 sm:text-sm
+                                                        border-gray-500 shadow-sm focus:border-dev-500 focus:ring-dev-500 sm:text-sm
                                                         text-gray-900 bg-gray-100 dark:text-gray-100 dark:bg-gray-900
                                                     ">
                                                 <p class="text-gray-500 dark:text-gray-600 text-sm">
@@ -121,7 +121,7 @@
                                                     id="circleci_job_name"
                                                     class="
                                                         block w-full rounded-md
-                                                        border-gray-500 shadow-sm focus:border-fnl-500 focus:ring-fnl-500 sm:text-sm
+                                                        border-gray-500 shadow-sm focus:border-dev-500 focus:ring-dev-500 sm:text-sm
                                                         text-gray-900 bg-gray-100 dark:text-gray-100 dark:bg-gray-900
                                                     ">
                                             </div>
@@ -138,7 +138,7 @@
                                                     id="circleci_build_name"
                                                     class="
                                                         block w-full rounded-md
-                                                        border-gray-500 shadow-sm focus:border-fnl-500 focus:ring-fnl-500 sm:text-sm
+                                                        border-gray-500 shadow-sm focus:border-dev-500 focus:ring-dev-500 sm:text-sm
                                                         text-gray-900 bg-gray-100 dark:text-gray-100 dark:bg-gray-900
                                                     ">
                                             </div>
@@ -152,7 +152,7 @@
                                 type="button"
                                 title="Save"
                                 @click="$dispatch('save-projector')"
-                                class="inline-flex justify-center rounded-md border border-transparent bg-fnl-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-fnl-700 focus:outline-none focus:ring-2 focus:ring-fnl-500 focus:ring-offset-2">Save</button>
+                                class="inline-flex justify-center rounded-md border border-transparent bg-dev-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-dev-700 focus:outline-none focus:ring-2 focus:ring-dev-500 focus:ring-offset-2">Save</button>
                             <button
                                 @click="$dispatch('close-projector')"
                                 type="button"
@@ -161,7 +161,7 @@
                                     rounded-md shadow-sm font-medium text-sm font-medium shadow-sm
                                     bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-50
                                     border border-gray-500
-                                    focus:outline-none focus:ring-2 focus:ring-fnl-500 focus:ring-offset-2
+                                    focus:outline-none focus:ring-2 focus:ring-dev-500 focus:ring-offset-2
                                 "
                             >Cancel</button>
                         </div>

@@ -10,7 +10,7 @@
         text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700
         ';
     $classes = ($active ?? false)
-                ? 'rounded-none border border-4 border-l-0 border-t-0 border-b-0 border-fnl-500 bg-gray-200/75 dark:bg-gray-700/50'
+                ? 'rounded-none border border-4 border-l-0 border-t-0 border-b-0 border-dev-500 bg-gray-200/75 dark:bg-gray-700/50'
                 : '';
 @endphp
 

@@ -40,7 +40,7 @@
                     : 'bg-red-500'
                 }}
             @else
-                bg-fnl-700
+                bg-dev-700
                 -mr-1.5 -mt-1.5 pt-px
             @endif
         ">{{ $badge_text }}
@@ -51,7 +51,7 @@
         @if($tool_dot_postman_api_key)
         <span
             title="Postman API key is active"
-            class="rounded-full text-center h-2 w-2 bg-fnl-700"></span>
+            class="rounded-full text-center h-2 w-2 bg-dev-700"></span>
         @endif
         @if($tool_dot_postman_repo)
         <span

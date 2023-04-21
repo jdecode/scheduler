@@ -1,61 +1,96 @@
 version : "3"
 services:
-  hackathonify-api:
+  scheduler-web:
     build:
       context: .
-      dockerfile: Dockerfile
-    container_name: hackathonify-api
+      dockerfile: dockerfiles/Web.Dockerfile
+    container_name: scheduler-web
     depends_on:
-      - hackathonify-pg
+      - scheduler-pg
     volumes:
-      - .:/var/www/html
+      - ./:/var/www/html
     restart: always
     ports:
-      - "2229:80"
-      - "3000:3000"
+      - "2314:80"
     environment:
-      APP_NAME: 'Lightning Scheduler | Hackathonify 2022'
-      APP_DEBUG: 'true'
-      APP_URL: 'http://220.209.1.1'
-      DB_CONNECTION: 'pgsql'
-      QUEUE_CONNECTION: 'database'
-      IGNITION_THEME: 'dark'
-      XDEBUG_START_WITH_REQUEST: 'no'
-      THE_KING_DEC: '&#9812;'
-      THE_KING_HEX: '&#x2654;'
-      GOOGLE_CLIENT_ID: "qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj"
-      GOOGLE_CLIENT_SECRET: "qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj"
-      GITHUB_CLIENT_ID: "qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj"
-      GITHUB_CLIENT_SECRET: "qjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqjqj"
+      APP_NAME: 'Scheduler'
       XDEBUG_CONFIG: "mode=debug,coverage,develop client_host=host.docker.internal discover_client_host=1 start_with_request=yes"
     networks:
-      hackathonify-api-network:
-        ipv4_address: 220.209.1.1
+      scheduler-network:
+        ipv4_address: 23.214.1.1
     extra_hosts:
       - host.docker.internal:host-gateway
 
-  hackathonify-pg:
+  scheduler-pg:
     image: postgres:latest
-    ports:
-        - "2346:5432"
     environment:
-      POSTGRES_PASSWORD: docker
-      POSTGRES_DB: test_db
-    container_name: hackathonify-pg
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: testing
+    container_name: scheduler-pg
     volumes:
-      - hackathonify-pg-disk:/var/lib/postgres
+      - scheduler-pg-disk:/var/lib/postgres
     networks:
-      hackathonify-api-network:
-        ipv4_address: 220.209.1.2
+      scheduler-network:
+        ipv4_address: 23.214.1.2
+
+  scheduler-q:
+    build:
+      context: .
+      dockerfile: dockerfiles/QueueListener.Dockerfile
+    container_name: scheduler-q
+    depends_on:
+      - scheduler-web
+    volumes:
+      - ./:/var/www/html
+    restart: unless-stopped
+    networks:
+      scheduler-network:
+        ipv4_address: 23.214.1.3
+
+  scheduler-mailpit:
+    image: 'axllent/mailpit:latest'
+    container_name: scheduler-mailpit
+    restart: always
+    networks:
+      scheduler-network:
+        ipv4_address: 23.214.1.4
+
+  scheduler-0x:
+    build:
+      context: .
+      dockerfile: dockerfiles/SansXdebug.Dockerfile
+    container_name: scheduler-0x
+    depends_on:
+      - scheduler-web
+    volumes:
+      - ./:/var/www/html
+    restart: always
+    networks:
+      scheduler-network:
+        ipv4_address: 23.214.1.5
+
+  scheduler-fe:
+    build:
+      context: .
+      dockerfile: dockerfiles/Fe.Dockerfile
+    container_name: scheduler-fe
+    depends_on:
+      - scheduler-web
+    volumes:
+      - ./:/var/www/html
+    restart: unless-stopped
+    networks:
+      scheduler-network:
+        ipv4_address: 23.214.1.6
 
 # On-disk storage of DB data, when containers are stopped/removed
 volumes:
-  hackathonify-pg-disk: {}
+  scheduler-pg-disk: {}
 
 # Local network for services running using this docker-compose config
 networks:
-  hackathonify-api-network:
+  scheduler-network:
     ipam:
       driver: default
       config:
-        - subnet: 220.209.0.0/16
+        - subnet: 23.214.0.0/16

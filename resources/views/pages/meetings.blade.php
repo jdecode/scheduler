@@ -16,7 +16,7 @@
                     </div>
                 @endif
                 @foreach (($meetings ?? []) as $meeting)
-                    <li class="mt-6 border-t-2 border-t-fnl-500 px-3">
+                    <li class="mt-6 border-t-2 border-t-dev-500 px-3">
                         <div class="text-xl py-6 sm:flex sm:justify-between">
                             <span class="max-w-full sm:max-w-none">
                                 {{ $meeting['id'] }}
