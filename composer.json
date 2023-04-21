@@ -94,7 +94,8 @@
         "ci": [
             "@chmoder",
             "npm run heroku-prebuild",
-            "npm run heroku-postbuild"
+            "npm run heroku-postbuild",
+            "@pre-push"
         ],
         "pre-commit": [
             "@pint",
