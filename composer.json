@@ -126,13 +126,13 @@
                 ]
             },
             "pre-commit": [
-                "docker-compose exec -T scheduler-0x composer run pre-commit"
+                "docker-compose exec -T scheduler-web composer run pre-commit"
             ],
             "pre-push": [
-                "docker-compose exec -T scheduler-0x composer run pre-push"
+                "docker-compose exec -T scheduler-web composer run pre-push"
             ],
             "post-merge": [
-                "docker-compose exec -T scheduler-0x composer run post-merge"
+                "docker-compose exec -T scheduler-web composer run post-merge"
             ]
         }
     },
