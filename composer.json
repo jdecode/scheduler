@@ -66,12 +66,9 @@
             "@php artisan ide-helper:models -n"
         ],
         "parallel-lint": "vendor/bin/parallel-lint --exclude vendor . --colors",
-        "phpcs": "vendor/bin/phpcs app --standard=PSR12 --colors -p",
+        "pint": "vendor/bin/pint app",
         "security-checker": "vendor/bin/security-checker security:check",
-        "phpcbf": "vendor/bin/phpcbf app --standard=PSR12",
-        "phpunit": "vendor/bin/phpunit --color=always",
         "pest": "vendor/bin/pest --color=always --stop-on-error --stop-on-failure --min=55",
-        "p": "vendor/bin/pest --stop-on-error --stop-on-failure",
         "routes": "@php artisan route:list --except-vendor",
         "larastan": "vendor/bin/phpstan analyze",
         "chmoder" : "mkdir -p public/build && chmod -R 777 storage bootstrap public/build && chown -R 1001:1001 \"/root\"",
@@ -100,12 +97,12 @@
             "npm run heroku-postbuild"
         ],
         "pre-commit": [
-            "@composer run parallel-lint",
-            "@composer run phpcs",
-            "@composer run security-checker"
+            "@pint",
+            "@parallel-lint",
+            "@security-checker"
         ],
         "pre-push": [
-            "@composer run pest"
+            "@pest"
         ],
         "tests": [
             "@pre-commit",
@@ -131,7 +128,9 @@
             "pre-commit": [
                 "docker-compose exec -T scheduler-0x composer run pre-commit"
             ],
-            "pre-push": [],
+            "pre-push": [
+                "docker-compose exec -T scheduler-0x composer run pre-push"
+            ],
             "post-merge": [
                 "docker-compose exec -T scheduler-0x composer run post-merge"
             ]
