@@ -1,0 +1,12 @@
+#!/bin/bash
+
+composer install
+npm install
+
+composer run dev
+
+git config --global --add safe.directory /var/www/html
+git config core.filemode false
+
+apache2-foreground
+
