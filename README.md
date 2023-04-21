@@ -1,5 +1,9 @@
 ## Lightning Scheduler
 
+#### Code-Integration [CoIn]
+[![CoIn](https://github.com/jdecode/scheduler/actions/workflows/CoIn.yml/badge.svg?branch=main)](https://github.com/jdecode/scheduler/actions/workflows/CoIn.yml)
+
+
 ### Prerequisites
 1. Git - To clone this repo
 2. Docker/docker-compose - To run the app locally
