@@ -74,7 +74,7 @@
         "p": "php artisan test --stop-on-error --stop-on-failure",
         "routes": "@php artisan route:list --except-vendor",
         "larastan": "vendor/bin/phpstan analyze",
-        "chmoder" : "mkdir public/build && chmod -R 777 storage bootstrap public/build && chown -R 1001:1001 \"/root\"",
+        "chmoder" : "mkdir -p public/build && chmod -R 777 storage bootstrap public/build && chown -R 1001:1001 \"/root\"",
         "clear": [
             "@php artisan config:clear",
             "@php artisan route:clear",
