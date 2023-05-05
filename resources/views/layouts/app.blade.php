@@ -14,6 +14,7 @@
         <style>
             [x-cloak] { display: none !important; }
         </style>
+        @livewireStyles
     </head>
     <body class="h-full font-sans antialiased bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 min-h-screen flex flex-col justify-between container-fluid mx-auto">
         <script type="text/javascript" src="{{ asset('bladewind/js/helpers.js') }}"></script>
@@ -78,5 +79,6 @@
             <x-custom.notifications></x-custom.notifications>
         </div>
         <x-footer></x-footer>
+        @livewireScripts
     </body>
 </html>

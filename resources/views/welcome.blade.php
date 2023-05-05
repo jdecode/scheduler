@@ -9,6 +9,7 @@
         <link rel="icon" type="image/svg+xml" href="{{ asset('images/ikonate-orange-svg/bolt.svg') }}" />
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @livewireStyles
     </head>
     <body class="antialiased bg-gray-100 dark:bg-gray-900">
         <div class="p-3">
@@ -122,5 +123,6 @@
             </div>
         </div>
         <x-footer></x-footer>
+        @livewireScripts
     </body>
 </html>
