@@ -12,8 +12,9 @@
                     @if(!empty(Auth::user()->schedule->uuid))
                         <div
                             data-link="{{ URL::to(route('connectWithMe', Auth::user()->schedule->uuid)) }}"
-                            class="text-gray-600 dark:text-gray-400 ">
-                            <div>Connect with me </div>
+                            class="text-gray-600 dark:text-gray-400 "
+                        >
+                            <div>Your "Connect with me" link </div>
                         </div>
                         <div class="">
                             <div
@@ -26,18 +27,26 @@
                                             id="connect-with-me"
                                             type="text"
                                             class="
-                                                w-full
-                                                bg-gray-100 dark:bg-gray-800
+                                                w-[600px]
+                                                bg-gray-100 dark:bg-gray-900
                                                 border-0 focus:ring-0
                                                 cursor-default
+                                                p-0
                                             "
                                             readonly
                                             value="{{ URL::to(route('connectWithMe', Auth::user()->schedule->uuid)) }}"
                                         />
                                 </div>
                                 <div
-                                    class="text-gray-500 text-sm pt-1 cursor-pointer hover:text-gray-700 dark:hover:text-gray-300D"
-                                    onclick="copyConnectWithMeLink()">Click to copy</div>
+                                    onclick="copyConnectWithMeLink()"
+                                    class="bg-green-700 hover:bg-green-600
+                                        text-white text-center
+                                        font-bold py-2 rounded cursor-pointer w-24
+                                        mt-2
+                                        "
+                                >
+                                    Copy link
+                                </div>
                             </div>
                         </div>
                     @endif
@@ -62,10 +71,10 @@
             </div>
         </div>
         <script>
-            function copyConnectWithMeLink() {
-                const element = document.querySelector('#connect-with-me');
-                element.select();
-                element.setSelectionRange(0, 99999);
+            async function copyConnectWithMeLink() {
+                const meLink = document.querySelector('#connect-with-me');
+                meLink.select();
+                meLink.setSelectionRange(0, 99999);
                 document.execCommand('copy');
             }
         </script>
