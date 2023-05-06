@@ -10,26 +10,34 @@
             <div class="mx-auto ">
                 <div class="overflow-hidden sm:rounded-lg">
                     @if(!empty(Auth::user()->schedule->uuid))
-                        <div class="flex items-start">
-                            <div
-                                data-link="{{ URL::to(route('connectWithMe', Auth::user()->schedule->uuid)) }}"
-                                class="
-                                    text-gray-600 dark:text-gray-400
-                                    py-4 my-4
-                                    flex flex-col justify-start
-                                    "
-                                >
-                                <div>My calendar link: </div>
-                            </div>
+                        <div
+                            data-link="{{ URL::to(route('connectWithMe', Auth::user()->schedule->uuid)) }}"
+                            class="text-gray-600 dark:text-gray-400 ">
+                            <div>Connect with me </div>
+                        </div>
+                        <div class="">
                             <div
                                 class="
                                     text-gray-800 dark:text-gray-200
-                                    p-4 my-4
+                                    py-1 my-1
                                     ">
                                 <div class="underline underline-offset-2 select-all">
-                                    {{ URL::to(route('connectWithMe', Auth::user()->schedule->uuid)) }}
+                                        <input
+                                            id="connect-with-me"
+                                            type="text"
+                                            class="
+                                                w-full
+                                                bg-gray-100 dark:bg-gray-800
+                                                border-0 focus:ring-0
+                                                cursor-default
+                                            "
+                                            readonly
+                                            value="{{ URL::to(route('connectWithMe', Auth::user()->schedule->uuid)) }}"
+                                        />
                                 </div>
-                                <div class="text-gray-500 text-sm">Click (to select), CTRL+C (to copy)</div>
+                                <div
+                                    class="text-gray-500 text-sm pt-1 cursor-pointer hover:text-gray-700 dark:hover:text-gray-300D"
+                                    onclick="copyConnectWithMeLink()">Click to copy</div>
                             </div>
                         </div>
                     @endif
@@ -53,5 +61,13 @@
                 </div>
             </div>
         </div>
+        <script>
+            function copyConnectWithMeLink() {
+                const element = document.querySelector('#connect-with-me');
+                element.select();
+                element.setSelectionRange(0, 99999);
+                document.execCommand('copy');
+            }
+        </script>
     </div>
 </x-app-layout>
